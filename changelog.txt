@@ -1,0 +1,4 @@
+*** WooCommerce Composite Products - Conditional Images ***
+
+2019.05.31 - version 1.0.0
+ * Initial Release.

@@ -1,0 +1,27 @@
+{
+	"name": "woocommerce-composite-products-conditional-images",
+	"title": "WooCommerce Composite Products - Conditional Images",
+	"version": "3.0.4",
+	"homepage": "http://woocommerce.com/products/composite-products/",
+	"license": "GPL-3.0+",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/woocommerce/woocommerce-composite-products.git"
+	},
+	"main": "Gruntfile.js",
+	"devDependencies": {
+		"grunt": "1.0.4",
+		"grunt-preprocess": "5.1.0",
+		"grunt-checktextdomain": "1.0.1",
+		"grunt-contrib-jshint": "2.1.0",
+		"grunt-contrib-uglify": "4.0.1",
+		"grunt-wp-i18n": "1.0.3",
+		"grunt-rtlcss": "2.0.1",
+		"grunt-postcss": "0.9.0",
+		"autoprefixer": "9.5.0"
+	},
+	"engines": {
+		"node": ">=6.9.4",
+		"npm": ">=1.1.0"
+	}
+}

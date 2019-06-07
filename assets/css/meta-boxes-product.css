@@ -1,0 +1,23 @@
+
+/* Component Image Styles. */
+.bto_scenario_data a.upload_conditional_image_button {
+	display: block;
+	float: left;
+}
+
+.bto_scenario_data a.remove_conditional_image_button {
+	clear: both;
+}
+
+.bto_scenario_data a.upload_conditional_image_button img {
+	width: 100px;
+	height: auto;
+}
+
+.bto_scenario_data a.upload_conditional_image_button img, .bto_scenario_data a.upload_conditional_image_button.has_image .prompt, .bto_scenario_data a.remove_conditional_image_button {
+	display: none;
+}
+
+.bto_scenario_data a.upload_conditional_image_button.has_image img, .bto_scenario_data a.remove_conditional_image_button.has_image {
+	display: block;
+}

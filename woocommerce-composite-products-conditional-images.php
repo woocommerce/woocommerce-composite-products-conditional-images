@@ -228,7 +228,7 @@ class WC_CP_Conditional_Images {
 
 					$image_size = apply_filters( 'woocommerce_gallery_image_size', 'woocommerce_single' );
 					$image      = wp_get_attachment_image( $image_id, $image_size, false, apply_filters( 'woocommerce_gallery_image_html_attachment_image_params', array(
-						'class' => 'wp-post-image',
+						'class' => 'wp-post-image wc-cp-overlay-image',
 					), $image_id, $image_size, true ) );
 
 					$scenario_data[ 'scenario_settings' ][ 'overlay_image' ][ $scenario_id ] = $image;

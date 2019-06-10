@@ -87,7 +87,10 @@ class WC_CP_Conditional_Images {
 		add_action( 'init', array( __CLASS__, 'localize_plugin' ) );
 
 		// Front-end script (where the magic happens).
-		add_filter( 'woocommerce_composite_script_dependencies', array( __CLASS__, 'add_to_cart_script' ) );
+		add_filter( 'woocommerce_composite_script_dependencies', array( __CLASS__, 'frontend_script' ) );
+
+		// If overlays exist, dequeue zoom script.
+		add_action( 'woocommerce_composite_add_to_cart', array( __CLASS__, 'dequeue_zoom_script' ), 10 );
 
 		// Admin script.
 		add_action( 'admin_enqueue_scripts', array( __CLASS__, 'admin_scripts' ) );
@@ -123,15 +126,46 @@ class WC_CP_Conditional_Images {
 	 *
 	 * @param array $dependencies
 	 */
-	public static function add_to_cart_script( $dependencies ) {
+	public static function frontend_script( $dependencies ) {
+
+		if ( ! current_theme_supports( 'wc-product-gallery-slider' ) ) {
+			return false;
+		}
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		wp_register_script( 'wc-add-to-cart-composite-ci', self::plugin_url() . '/assets/js/single-product' . $suffix . '.js', array(), self::$version );
-
 		$dependencies[] = 'wc-add-to-cart-composite-ci';
 
 		return $dependencies;
+	}
+
+	/**
+	 * Dequeue zoom script.
+	 */
+	public static function dequeue_zoom_script( $dependencies ) {
+
+		global $product;
+
+		if ( ! current_theme_supports( 'wc-product-gallery-slider' ) ) {
+			return false;
+		}
+
+		$has_overlay_image_scenarios = false;
+		$scenario_metadata           = $product->get_scenario_data();
+
+		if ( ! empty( $scenario_metadata ) ) {
+			foreach ( $scenario_metadata as $scenario_id => $metadata ) {
+				if ( isset( $metadata[ 'scenario_actions' ][ 'overlay_image' ][ 'is_active' ] ) && 'yes' === $metadata[ 'scenario_actions' ][ 'overlay_image' ][ 'is_active' ] ) {
+					$has_overlay_image_scenarios = true;
+					break;
+				}
+			}
+		}
+
+		if ( $has_overlay_image_scenarios ) {
+			wp_dequeue_script( 'zoom' );
+		}
 	}
 
 	/**
@@ -212,6 +246,10 @@ class WC_CP_Conditional_Images {
 	 */
 	public static function scenario_data( $scenario_data, $component_options, $composite ) {
 
+		if ( ! current_theme_supports( 'wc-product-gallery-slider' ) ) {
+			return $scenario_data;
+		}
+
 		$scenario_metadata = $composite->get_scenario_data();
 
 		if ( ! empty( $scenario_data[ 'scenarios' ] ) ) {
@@ -228,7 +266,7 @@ class WC_CP_Conditional_Images {
 
 					$image_size = apply_filters( 'woocommerce_gallery_image_size', 'woocommerce_single' );
 					$image      = wp_get_attachment_image( $image_id, $image_size, false, apply_filters( 'woocommerce_gallery_image_html_attachment_image_params', array(
-						'class' => 'wp-post-image wc-cp-overlay-image',
+						'class'    => 'wp-post-image wc-cp-overlay-image'
 					), $image_id, $image_size, true ) );
 
 					$scenario_data[ 'scenario_settings' ][ 'overlay_image' ][ $scenario_id ] = $image;

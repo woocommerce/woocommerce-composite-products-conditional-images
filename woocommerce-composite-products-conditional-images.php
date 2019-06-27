@@ -46,7 +46,7 @@ class WC_CP_Conditional_Images {
 	 *
 	 * @var string
 	 */
-	public static $req_cp_version = '4.0.0';
+	public static $req_cp_version = '4.1.0';
 
 	/**
 	 * Plugin URL.

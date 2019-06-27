@@ -113,7 +113,8 @@ module.exports = function( grunt ) {
 				expand: true,
 				ext: '-rtl.css',
 				src: [
-					'<%= dirs.css %>/meta-boxes-product.css'
+					'<%= dirs.css %>/meta-boxes-product.css',
+					'<%= dirs.css %>/single-product.css'
 				]
 			}
 		},

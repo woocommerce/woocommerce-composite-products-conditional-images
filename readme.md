@@ -14,7 +14,7 @@ This approach makes it possible to utilize either **swapping** or **compositing*
 
 #### Image Swapping
 
-If you have worked with Variable Products and Variation Images, chances are you are already familiar with this concept. Here's the idea behind image swapping: 
+If you have worked with Variable Products and Variation Images, chances are you are already familiar with this concept. Here's the idea behind image swapping:
 
 The main product image is **swapped** with an image that depicts the chosen options as soon as the configuration of the Composite Product is complete.
 
@@ -56,7 +56,7 @@ Our objective is to swap the main product image once these options have been sel
 8. Search for and select the **Brown Shoes**.
 9. Tick the **Accessory** Component checkbox.
 10. Choose **is**.
-11. Search for and select the **Red Tie**. 
+11. Search for and select the **Red Tie**.
 12. Locate the **Scenario Actions** section.
 13. Check the **Overlay Image** option.
 14. Click **Select Image** and choose an image that depicts the White T-Shirt / Brown Shoes / Red Tie configuration.
@@ -141,4 +141,19 @@ Finally, let's add a "compositable" image for the **Red Tie** option by repeatin
 <img width="787" alt="build-your-outfit-comped-accessory" src="https://user-images.githubusercontent.com/1783726/60344179-9db17700-99be-11e9-95ce-ae111e642064.png">
 
 <img width="1209" alt="build-your-outfit-swapped" src="https://user-images.githubusercontent.com/1783726/60344196-a609b200-99be-11e9-8b21-8f05d3da855b.png">
+
+### Notes
+
+#### Requirements
+
+The mini-extension:
+
+1. Requires Composite Products 4.1+.
+2. Only works with themes that declare support for the `'wc-product-gallery-slider` feature.
+
+#### Limitations
+
+1. The product image cannot be opened in a lightbox once the mini-extension has stacked additional images over it.
+2. The image zooming feature included with WooCommerce is not compatible with the swapping/compositing techniques introduced by the mini-extension. When a Composite Product includes Scenarios with the **Overlay Image** Scenario Action, the image zooming feature of the Composite Product is disabled.
+
 

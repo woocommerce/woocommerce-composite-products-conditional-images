@@ -36,7 +36,7 @@ The **Compositing** technique is often a better choice if the number of possible
 
 The two techniques can be better understood by looking at a practical example. The Build Your Outfit composite product. The product consists of a **T-Shirt**, a pair of **Shoes** and a free **Accessory**.
 
-[Swap Image Scenario]
+<img width="1212" alt="build-your-outfit" src="https://user-images.githubusercontent.com/1783726/60343983-33003b80-99be-11e9-9d95-c4de60f34bbb.png">
 
 Consider the following configuration of Component Options:
 
@@ -63,9 +63,11 @@ Our objective is to swap the main product image once these options have been sel
 15. Make sure that the **Activate Options** and **Hide Components** options are disabled.
 16. **Update** the product to save your changes.
 
+<img width="788" alt="build-your-outfit-swap-scenario" src="https://user-images.githubusercontent.com/1783726/60343879-f46a8100-99bd-11e9-84bd-329a72c8d010.png">
+
 Now, after choosing the White T-Shirt, Brown Shoes and Red Tie, the main product image will be replaced by the image you selected in Step 14. To achieve the same result when any combination of options is selected, repeat Steps 1-15 for all possible **Build Your Outfit** configurations.
 
-[Result]
+<img width="1209" alt="build-your-outfit-swapped" src="https://user-images.githubusercontent.com/1783726/60343915-0d733200-99be-11e9-9890-4fd7e6fbf292.png">
 
 Note that the image will be updated after **all 3 Component Options have been selected**.
 
@@ -87,11 +89,11 @@ Let's start by adding an image for the **White T-Shirt** option:
 10. Make sure that the **Activate Options** and **Hide Components** options are disabled.
 11. **Update** the product to save your changes.
 
-[White Tee Scenario]
+<img width="788" alt="build-your-outfit-comped-scenario-tee" src="https://user-images.githubusercontent.com/1783726/60344019-47dccf00-99be-11e9-8eae-d09c3d072250.png">
 
 Our objective is to replace the featured image of the product with a new "scene", and add a new element every time a Component Option is selected. To achieve this, the image that we added in Step 9 **completely covers** the original featured image:
 
-[White Tee Image]
+<img width="1201" alt="build-your-outfit-comped-tee" src="https://user-images.githubusercontent.com/1783726/60344039-54f9be00-99be-11e9-9404-d22e780b8c20.png">
 
 Next, we will add a "compositable" image for the **Brown Shoes** option:
 
@@ -110,14 +112,14 @@ Next, we will add a "compositable" image for the **Brown Shoes** option:
 13. Make sure that the **Activate Options** and **Hide Components** options are disabled.
 14. **Update** the product to save your changes.
 
-[Brown Shoes Scenario]
+<img width="788" alt="build-your-outfit-comped-scenario-shoes" src="https://user-images.githubusercontent.com/1783726/60344152-8a061080-99be-11e9-8b1d-a33654481bb0.png">
 
 Note that:
 
 * The Brown Shoes image we selected in Step 12 contains a transparent area that allows the White T-Shirt image to remain visible when the Brown Shoes option is selected.
 * The Brown Shoes image should be layered over the chosen T-Shirt image only when a T-Shirt is selected. This is achieved in Steps 3-5.
 
-[Brown Shoes Image]
+<img width="1208" alt="build-your-outfit-comped-shoes" src="https://user-images.githubusercontent.com/1783726/60344163-91c5b500-99be-11e9-8640-4ab24c855d97.png">
 
 Finally, let's add a "compositable" image for the **Red Tie** option by repeating steps 1-14 above:
 
@@ -136,7 +138,7 @@ Finally, let's add a "compositable" image for the **Red Tie** option by repeatin
 13. Make sure that the **Activate Options** and **Hide Components** options are disabled.
 14. **Update** the product to save your changes.
 
-[Red Tie Scenario]
+<img width="787" alt="build-your-outfit-comped-accessory" src="https://user-images.githubusercontent.com/1783726/60344179-9db17700-99be-11e9-95ce-ae111e642064.png">
 
-[Result]
+<img width="1209" alt="build-your-outfit-swapped" src="https://user-images.githubusercontent.com/1783726/60344196-a609b200-99be-11e9-8b21-8f05d3da855b.png">
 

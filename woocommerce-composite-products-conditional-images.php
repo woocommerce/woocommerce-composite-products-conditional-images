@@ -1,7 +1,7 @@
 <?php
 /**
 * Plugin Name: WooCommerce Composite Products - Conditional Images
-* Plugin URI: http://www.woothemes.com/products/composite-products/
+* Plugin URI: https://woocommerce.com/products/composite-products/
 * Description: Composite Products mini-extension that allows you to conditionally overlay additional images over the main Composite Product image.
 * Version: 1.0.1-dev
 * Author: SomewhereWarm

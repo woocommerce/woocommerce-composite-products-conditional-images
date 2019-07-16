@@ -77,7 +77,7 @@
 							var image_width = view.$main_image.innerWidth(),
 								overlay_css = { width: image_width };
 
-							this.$main_image_container.find( '.wc-cp-overlay-image' ).css( overlay_css );
+							view.$main_image_container.find( '.wc-cp-overlay-image' ).css( overlay_css );
 
 						} );
 					},

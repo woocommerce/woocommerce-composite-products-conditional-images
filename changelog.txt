@@ -1,4 +1,8 @@
 *** WooCommerce Composite Products - Conditional Images ***
 
+2019.07.16 - version 1.0.1
+ * Fix - Resize stacked images when the viewport width changes.
+ * Tweak - Adjust overlay image width based on main 'img' width.
+
 2019.06.27 - version 1.0.0
  * Initial Release.

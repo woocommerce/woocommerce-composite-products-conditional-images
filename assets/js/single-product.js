@@ -53,25 +53,43 @@
 
 				var View = Backbone.View.extend( {
 
+					$main_image_container: false,
 					$main_image: false,
-					$gallery: false,
 
 					initialize: function( options ) {
 
-						this.$main_image = this.$el.find( '.woocommerce-product-gallery__image' ).first();
-						this.$gallery    = this.$el.closest( '.woocommerce-product-gallery' );
+						this.$main_image_container = this.$el.find( '.woocommerce-product-gallery__image' ).first();
+						this.$main_image           = this.$main_image_container.find( 'a img' ).first();
 
 						this.listenTo( this.model, 'change:active_scenarios', this.render );
+
+						var view = this;
+
+						/**
+						 * Recalculate overlay widths on resize.
+						 */
+						$wc_cp_window.resize( function() {
+
+							if ( ! composite.is_initialized ) {
+								return false;
+							}
+
+							var image_width = view.$main_image.innerWidth(),
+								overlay_css = { width: image_width };
+
+							this.$main_image_container.find( '.wc-cp-overlay-image' ).css( overlay_css );
+
+						} );
 					},
 
 					render: function() {
 
 						var active_scenarios = this.model.get( 'active_scenarios' ),
-							gallery_width    = this.$gallery.innerWidth(),
-							overlay_css      = { width: gallery_width, position: 'absolute' };
+							image_width      = this.$main_image.innerWidth(),
+							overlay_css      = { width: image_width, position: 'absolute' };
 
 						// Remove overlays.
-						this.$main_image.find( '.wc-cp-overlay-image' ).remove();
+						this.$main_image_container.find( '.wc-cp-overlay-image' ).remove();
 
 						for ( var index = active_scenarios.length - 1; index >= 0; index-- ) {
 
@@ -80,7 +98,7 @@
 								$image_html = $( image_html ).css( overlay_css );
 
 							if ( image_html ) {
-								this.$main_image.prepend( $image_html );
+								this.$main_image_container.prepend( $image_html );
 							}
 						}
 					}

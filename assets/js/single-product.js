@@ -1,4 +1,4 @@
-;( function ( $, window, document, undefined ) {
+;( function ( $, window, document, Backbone, undefined ) {
 
 	$( '.composite_data' ).on( 'wc-composite-initializing', function( event, composite ) {
 
@@ -61,6 +61,10 @@
 						this.$main_image_container = this.$el.find( '.woocommerce-product-gallery__image' ).first();
 						this.$main_image           = this.$main_image_container.find( 'a img' ).first();
 
+						if ( ! this.$main_image ) {
+							return;
+						}
+
 						this.listenTo( this.model, 'change:active_scenarios', this.render );
 
 						var view = this;
@@ -74,18 +78,23 @@
 								return false;
 							}
 
-							var image_width = view.$main_image.innerWidth(),
-								overlay_css = { width: image_width };
-
-							view.$main_image_container.find( '.wc-cp-overlay-image' ).css( overlay_css );
+							view.handle_resize();
 
 						} );
+
+						if ( this.$main_image.get(0).complete ) {
+							view.handle_resize();
+						} else {
+							this.$main_image.one( 'load', function() {
+								view.handle_resize();
+							} );
+						}
 					},
 
 					render: function() {
 
 						var active_scenarios = this.model.get( 'active_scenarios' ),
-							image_width      = this.$main_image.innerWidth(),
+							image_width      = this.$main_image.width(),
 							overlay_css      = { width: image_width, position: 'absolute' };
 
 						// Remove overlays.
@@ -101,6 +110,14 @@
 								this.$main_image_container.prepend( $image_html );
 							}
 						}
+					},
+
+					handle_resize: function() {
+
+						var image_width = this.$main_image.width(),
+							overlay_css = { width: image_width };
+
+						this.$main_image_container.find( '.wc-cp-overlay-image' ).css( overlay_css );
 					}
 
 				} );
@@ -130,4 +147,4 @@
 
 	} );
 
-} ) ( jQuery, window, document );
+} ) ( jQuery, window, document, Backbone );

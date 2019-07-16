@@ -95,7 +95,7 @@
 
 						var active_scenarios = this.model.get( 'active_scenarios' ),
 							image_width      = this.$main_image.width(),
-							overlay_css      = { width: image_width, position: 'absolute' };
+							overlay_css      = { width: image_width, position: 'absolute', 'z-index': 1 };
 
 						// Remove overlays.
 						this.$main_image_container.find( '.wc-cp-overlay-image' ).remove();

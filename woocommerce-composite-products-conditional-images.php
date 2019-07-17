@@ -39,7 +39,7 @@ class WC_CP_Conditional_Images {
 	 *
 	 * @var string
 	 */
-	public static $version = '1.0.1-dev';
+	public static $version = '1.0.1-dev.2';
 
 	/**
 	 * Min required CP version.
@@ -134,7 +134,7 @@ class WC_CP_Conditional_Images {
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-		wp_register_script( 'wc-add-to-cart-composite-ci', self::plugin_url() . '/assets/js/single-product' . $suffix . '.js', array(), self::$version );
+		wp_register_script( 'wc-add-to-cart-composite-ci', self::plugin_url() . '/assets/js/single-product' . $suffix . '.js', array( 'jquery', 'underscore', 'backbone' ), self::$version );
 		$dependencies[] = 'wc-add-to-cart-composite-ci';
 
 		return $dependencies;

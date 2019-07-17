@@ -83,10 +83,14 @@
 						} );
 
 						if ( this.$main_image.get(0).complete ) {
-							view.handle_resize();
+							setTimeout( function() {
+								view.handle_resize();
+							}, 100 );
 						} else {
 							this.$main_image.one( 'load', function() {
-								view.handle_resize();
+								setTimeout( function() {
+									view.handle_resize();
+								}, 100 );
 							} );
 						}
 					},

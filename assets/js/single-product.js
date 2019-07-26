@@ -59,7 +59,15 @@
 					initialize: function( options ) {
 
 						this.$main_image_container = this.$el.find( '.woocommerce-product-gallery__image' ).first();
-						this.$main_image           = this.$main_image_container.find( 'a img' ).first();
+
+						if ( this.$main_image_container.length > 0 ) {
+							this.$main_image = this.$main_image_container.find( 'a img' ).first();
+						} else {
+							this.$main_image_container = this.$el.find( '.woocommerce-product-gallery__image--placeholder' ).first();
+							if ( this.$main_image_container.length > 0 ) {
+								this.$main_image = this.$main_image_container.find( 'img' ).first();
+							}
+						}
 
 						if ( ! this.$main_image ) {
 							return;

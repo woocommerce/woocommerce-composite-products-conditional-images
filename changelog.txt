@@ -1,6 +1,6 @@
 *** WooCommerce Composite Products - Conditional Images ***
 
-2019.xx.xx - version 1.0.2
+2019.07.26 - version 1.0.2
 * Fix - Resolve issue with Composite Products that do not have a product image set.
 
 2019.07.16 - version 1.0.1

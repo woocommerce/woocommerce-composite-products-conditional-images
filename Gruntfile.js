@@ -38,7 +38,8 @@ module.exports = function( grunt ) {
 					'_': false,
 					'wp': false,
 					'wc_composite_admin_params': false,
-					'wc_cp_ci_admin_params': false
+					'wc_cp_ci_admin_params': false,
+					'$wc_cp_window': false
 				},
 			},
 			all: [

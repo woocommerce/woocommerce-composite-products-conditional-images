@@ -149,7 +149,7 @@ Finally, let's add a "compositable" image for the **Red Tie** option by repeatin
 The mini-extension:
 
 1. Requires Composite Products 4.1+.
-2. Only works with themes that declare support for the `'wc-product-gallery-slider` feature.
+2. Only works with themes that declare support for the `wc-product-gallery-slider` feature.
 
 #### Limitations
 

@@ -1,4 +1,4 @@
-# WooCommerce Product Bundles - Conditional Images
+# WooCommerce Composite Products - Conditional Images
 
 ### What's This?
 

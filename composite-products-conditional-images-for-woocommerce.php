@@ -1,9 +1,9 @@
 <?php
 /**
-* Plugin Name: WooCommerce Composite Products - Conditional Images
-* Plugin URI: https://woocommerce.com/products/composite-products/
-* Description: Composite Products mini-extension that allows you to conditionally overlay additional images over the main Composite Product image.
-* Version: 1.1.1
+* Plugin Name: Composite Products - Conditional Images for WooCommerce
+* Plugin URI: https://docs.woocommerce.com/document/composite-products/composite-products-extensions/#cp-ci
+* Description: Free mini-extension for WooCommerce Composite Products that allows you to create dynamic, multi-layer Composite Product images that respond to option changes.
+* Version: 1.2.0
 * Author: SomewhereWarm
 * Author URI: https://somewherewarm.gr/
 *
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Main plugin class.
  *
  * @class    WC_CP_Conditional_Images
- * @version  1.1.1
+ * @version  1.2.0
  */
 class WC_CP_Conditional_Images {
 
@@ -39,7 +39,7 @@ class WC_CP_Conditional_Images {
 	 *
 	 * @var string
 	 */
-	public static $version = '1.1.1';
+	public static $version = '1.2.0';
 
 	/**
 	 * Min required CP version.
@@ -112,7 +112,7 @@ class WC_CP_Conditional_Images {
 	 * CP version check notice.
 	 */
 	public static function cp_version_check_notice() {
-	    echo '<div class="error"><p>' . sprintf( __( '<strong>WooCommerce Composite Products &ndash; Conditional Images</strong> requires Composite Products <strong>%s</strong> or higher.', 'woocommerce-composite-products-conditional-images' ), self::$req_cp_version ) . '</p></div>';
+	    echo '<div class="error"><p>' . sprintf( __( '<strong>Composite Products &ndash; Conditional Images</strong> requires WooCommerce Composite Products <strong>%s</strong> or higher.', 'woocommerce-composite-products-conditional-images' ), self::$req_cp_version ) . '</p></div>';
 	}
 
 	/**

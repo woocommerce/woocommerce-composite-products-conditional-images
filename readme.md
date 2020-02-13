@@ -6,9 +6,9 @@ Mini-extension for [WooCommerce Composite Products](https://woocommerce.com/prod
 
 ### How Does It Work?
 
-The mini-extension introduces a new **Scenario Action** called **Overlay Image**, which requires you to choose an image from your Media library. When the Scenario matching conditions are satified, this image will be overlaid on top of the main Composite Product image.
+The mini-extension introduces a new **Scenario Action** called **Overlay Image**, which requires you to choose an image from your Media library. When the Scenario matching conditions are satified, this image is overlaid on top of the main Composite Product image.
 
-When multiple **Overlay Image** Scenarios exist, each may contribute its own image to the main product image stack. The order of images in the stack follows the order of Scenarios in **Product Data > Scenarios**.
+When multiple **Overlay Image** Scenarios exist, each may contribute its own image to the main product image stack. The layering order of these conditional images depends on the relative position of the Scenarios.
 
 This approach makes it possible to utilize either **swapping** or **compositing** techniques to conditionally modify the main product image, depending on your needs:
 

@@ -1,8 +1,8 @@
-# WooCommerce Composite Products - Conditional Images
+# Composite Products - Conditional Images for WooCommerce
 
 ### What's This?
 
-Mini-extension for [WooCommerce Composite Products](https://woocommerce.com/products/composite-products/) that allows you to conditionally modify the main Composite Product image in response to configuration changes.
+Mini-extension for [WooCommerce Composite Products](https://woocommerce.com/products/composite-products/?aff=46147&cid=5972457) that allows you to create dynamic, multi-layer Composite Product images that respond to option changes. The mini-extension leverages [Scenarios](https://docs.woocommerce.com/document/composite-products/composite-products-advanced-configuration/) to conditionally layer additional images over the main Composite Product image.
 
 ### How Does It Work?
 
@@ -14,9 +14,11 @@ This approach makes it possible to utilize either **swapping** or **compositing*
 
 #### Image Swapping
 
-If you have worked with Variable Products and Variation Images, chances are you are already familiar with this concept. Here's the idea behind image swapping:
+If you have previously worked with Variable Products and Variation Images, chances are you are already familiar with this concept. Here's the idea behind image swapping:
 
 The main product image is **swapped** with an image that depicts the chosen options as soon as the configuration of the Composite Product is complete.
+
+Instead of replacing the product images, the same effect can be achieved by covering the main product image with a fully opaque (non-transparent) image.
 
 #### Image Compositing
 
@@ -32,7 +34,9 @@ The **Swapping** technique is a viable choice if the number of Component Options
 
 The **Compositing** technique is often a better choice if the number of possible configurations is high, as it requires you to create one "compositable" image for each Component Option. However, specialized knowledge and tools are required to produce a natural-looking result. For this reason, the Compositing technique is often preferred when 3D product models are available, as 3D modelling software can speed up the production of "compositable" images.
 
-### Image Swapping Example
+### Examples
+
+#### Image Swapping
 
 The two techniques can be better understood by looking at a practical example. The Build Your Outfit composite product. The product consists of a **T-Shirt**, a pair of **Shoes** and a free **Accessory**.
 
@@ -71,7 +75,7 @@ Now, after choosing the White T-Shirt, Brown Shoes and Red Tie, the main product
 
 Note that the image will be updated after **all 3 Component Options have been selected**.
 
-#### Image Compositing Example
+#### Image Compositing
 
 This time, instead of creating an image (and Scenario) for every possible configuration, we will layer multiple images on top of each other to obtain the same end-result. An advantage of this method is that the main product image will be updated **while** the **T-Shirt**, **Shoes** and **Accessory** Components are configured.
 

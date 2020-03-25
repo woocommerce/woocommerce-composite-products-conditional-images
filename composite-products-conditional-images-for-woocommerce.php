@@ -49,6 +49,13 @@ class WC_CP_Conditional_Images {
 	public static $req_cp_version = '5.1';
 
 	/**
+	 * CP URL.
+	 *
+	 * @var string
+	 */
+	private static $cp_url = 'https://woocommerce.com/products/composite-products/?aff=46147&cid=7316145&pid=cp_ci';
+
+	/**
 	 * Plugin URL.
 	 *
 	 * @return string
@@ -112,7 +119,7 @@ class WC_CP_Conditional_Images {
 	 * CP version check notice.
 	 */
 	public static function cp_version_check_notice() {
-	    echo '<div class="error"><p>' . sprintf( __( '<strong>Composite Products &ndash; Conditional Images</strong> requires <a href="https://woocommerce.com/products/composite-products/" target="_blank">WooCommerce Composite Products</a> <strong>%s</strong> or higher.', 'woocommerce-composite-products-conditional-images' ), self::$req_cp_version ) . '</p></div>';
+	    echo '<div class="error"><p>' . sprintf( __( '<strong>Composite Products &ndash; Conditional Images</strong> requires <a href="%1$s" target="_blank">WooCommerce Composite Products</a> version <strong>%2$s</strong> or higher.', 'woocommerce-composite-products-conditional-images' ), self::$cp_url, self::$req_cp_version ) . '</p></div>';
 	}
 
 	/**

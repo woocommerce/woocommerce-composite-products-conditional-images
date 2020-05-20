@@ -2,7 +2,7 @@
 
 ### What's This?
 
-Mini-extension for [WooCommerce Composite Products](https://woocommerce.com/products/composite-products?aff=46147&cid=5699243) that allows you to create dynamic, multi-layer Composite Product images that respond to option changes. The mini-extension leverages [Scenarios](https://docs.woocommerce.com/document/composite-products/composite-products-advanced-configuration/) to conditionally layer additional images over the main Composite Product image.
+Mini-extension for [WooCommerce Composite Products](https://woocommerce.com/products/composite-products/) that allows you to create dynamic, multi-layer Composite Product images that respond to option changes. The mini-extension leverages [Scenarios](https://docs.woocommerce.com/document/composite-products/composite-products-advanced-configuration/) to conditionally layer additional images over the main Composite Product image.
 
 ### How Does It Work?
 

@@ -11,10 +11,10 @@
 * Domain Path: /languages/
 *
 * Requires at least: 4.4
-* Tested up to: 5.3
+* Tested up to: 5.4
 *
 * WC requires at least: 3.1
-* WC tested up to: 4.0
+* WC tested up to: 4.1
 *
 * Copyright: © 2017-2020 SomewhereWarm SMPC.
 * License: GNU General Public License v3.0
@@ -53,7 +53,7 @@ class WC_CP_Conditional_Images {
 	 *
 	 * @var string
 	 */
-	private static $cp_url = 'https://woocommerce.com/products/composite-products/?aff=46147&cid=7316145&pid=cp_ci';
+	private static $cp_url = 'https://woocommerce.com/products/composite-products/';
 
 	/**
 	 * Plugin URL.

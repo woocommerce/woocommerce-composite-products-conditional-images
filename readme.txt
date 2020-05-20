@@ -3,11 +3,11 @@
 Contributors: franticpsyx, SomewhereWarm
 Tags: woocommerce, composite, products, conditional, image, layers, overlay
 Requires at least: 4.4
-Tested up to: 5.3
+Tested up to: 5.4
 Stable tag: 1.2.1
 Requires PHP: 5.6
 WC requires at least: 3.1
-WC tested up to: 4.0
+WC tested up to: 4.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,7 +16,7 @@ Free mini-extension for WooCommerce Composite Products that allows you to create
 
 == Description ==
 
-Free mini-extension for [WooCommerce Composite Products](https://woocommerce.com/products/composite-products/?aff=46147&cid=5972457) that allows you to create dynamic, multi-layer Composite Product images that respond to option changes. The mini-extension leverages [Scenarios](https://docs.woocommerce.com/document/composite-products/composite-products-advanced-configuration/) to conditionally layer additional images over the main Composite Product image.
+Free mini-extension for [WooCommerce Composite Products](https://woocommerce.com/products/composite-products/) that allows you to create dynamic, multi-layer Composite Product images that respond to option changes. The mini-extension leverages [Scenarios](https://docs.woocommerce.com/document/composite-products/composite-products-advanced-configuration/) to conditionally layer additional images over the main Composite Product image.
 
 
 == Documentation ==
@@ -62,13 +62,14 @@ The **Compositing** technique is often a better choice if the number of possible
 
 1. The product image cannot be opened in a lightbox once the mini-extension has stacked additional images over it.
 2. The image zooming feature included with WooCommerce is not compatible with the swapping/compositing techniques introduced by the mini-extension. When a Composite Product includes Scenarios with the **Overlay Image** Scenario Action, the image zooming feature of the Composite Product is disabled.
+3. The plugin works with themes that declare support for the `wc-product-gallery-slider` feature.
 
 
 == Installation ==
 
 Composite Products - Conditional Images:
 
-1. Requires the official [WooCommerce Composite Products](https://woocommerce.com/products/composite-products/?aff=46147&cid=5972457) extension. Before installing this plugin, please ensure that you are running the latest versions of both **WooCommerce** and **WooCommerce Composite Products**.
+1. Requires the official [WooCommerce Composite Products](https://woocommerce.com/products/composite-products/) extension. Before installing this plugin, please ensure that you are running the latest versions of both **WooCommerce** and **WooCommerce Composite Products**.
 2. Only works with themes that declare support for the `wc-product-gallery-slider` feature.
 
 

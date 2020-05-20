@@ -110,4 +110,5 @@ Composite Products - Conditional Images:
 
 == Upgrade Notice ==
 
+= 1.2.2 =
 Declared WooCommerce 4.2 compatibility.

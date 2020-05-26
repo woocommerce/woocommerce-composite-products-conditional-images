@@ -1,4 +1,4 @@
-=== Composite Products - Conditional Images for WooCommerce ===
+=== Composite Products - Conditional Images ===
 
 Contributors: franticpsyx, SomewhereWarm
 Tags: woocommerce, composite, products, conditional, image, layers, overlay

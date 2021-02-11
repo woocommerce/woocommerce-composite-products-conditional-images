@@ -4,7 +4,7 @@ Contributors: franticpsyx, SomewhereWarm
 Tags: woocommerce, composite, products, conditional, image, layers, overlay
 Requires at least: 4.4
 Tested up to: 5.6
-Stable tag: 1.2.3
+Stable tag: 1.2.4
 Requires PHP: 5.6
 WC requires at least: 3.1
 WC tested up to: 5.0
@@ -81,6 +81,9 @@ Composite Products - Conditional Images:
 
 == Changelog ==
 
+= 1.2.4 =
+* Fix - Improved Scenario Action styles when using Composite Products v8.0.
+
 = 1.2.3 =
 * Fix - Declared compatibility with the latest WooCommerce and WordPress versions.
 * Fix - Added support for Composite Products v8.0.
@@ -114,5 +117,5 @@ Composite Products - Conditional Images:
 
 == Upgrade Notice ==
 
-= 1.2.2 =
-Declared WooCommerce 4.2 compatibility.
+= 1.2.4 =
+Improved Scenario Action styles when using Composite Products v8.0.

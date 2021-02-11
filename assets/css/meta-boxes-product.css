@@ -1,4 +1,9 @@
 /* Component Image Styles. */
+
+.action_conditional_images {
+	overflow: hidden;
+}
+
 .bto_scenario_data a.upload_conditional_image_button {
 	display: block;
 	float: left;
@@ -6,6 +11,7 @@
 
 .bto_scenario_data a.remove_conditional_image_button {
 	clear: both;
+	float: left;
 }
 
 .bto_scenario_data a.upload_conditional_image_button img {

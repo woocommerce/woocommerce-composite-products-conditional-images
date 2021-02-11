@@ -3,7 +3,7 @@
 * Plugin Name: Composite Products - Conditional Images
 * Plugin URI: https://docs.woocommerce.com/document/composite-products/composite-products-extensions/#cp-ci
 * Description: Free mini-extension for WooCommerce Composite Products that allows you to create dynamic, multi-layer Composite Product images that respond to option changes.
-* Version: 1.2.3
+* Version: 1.2.4
 * Author: SomewhereWarm
 * Author URI: https://somewherewarm.com/
 *
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Main plugin class.
  *
  * @class    WC_CP_Conditional_Images
- * @version  1.2.2
+ * @version  1.2.4
  */
 class WC_CP_Conditional_Images {
 
@@ -39,7 +39,7 @@ class WC_CP_Conditional_Images {
 	 *
 	 * @var string
 	 */
-	public static $version = '1.2.2';
+	public static $version = '1.2.4';
 
 	/**
 	 * Min required CP version.
@@ -299,28 +299,54 @@ class WC_CP_Conditional_Images {
 		$overlay_image = isset( $scenario_data[ 'scenario_actions' ][ 'overlay_image' ][ 'is_active' ] ) && 'yes' === $scenario_data[ 'scenario_actions' ][ 'overlay_image' ][ 'is_active' ] ? 'yes' : 'no';
 		$image_id      = ! empty( $scenario_data[ 'scenario_actions' ][ 'overlay_image' ][ 'image_id' ] ) ? $scenario_data[ 'scenario_actions' ][ 'overlay_image' ][ 'image_id' ] : '';
 		$image         = $image_id ? wp_get_attachment_thumb_url( $image_id ) : '';
+		$is_cp_gte_80  = version_compare( WC_CP()->version, '8.0.0' );
 
-		?>
-		<div class="scenario_action_overlay_image_group" >
-			<div class="form-field toggle_overlay_image">
-				<label for="scenario_action_overlay_image_<?php echo $id; ?>">
-					<?php echo __( 'Overlay Image', 'woocommerce-composite-products-conditional-images' ); ?>
-				</label>
-				<input id="scenario_action_overlay_image_<?php echo $id; ?>" type="checkbox" class="checkbox scenario_action_overlay_image" <?php echo ( $overlay_image === 'yes' ? ' checked="checked"' : '' ); ?> name="bto_scenario_data[<?php echo $id; ?>][scenario_actions][overlay_image][is_active]" <?php echo ( $overlay_image === 'yes' ? ' value="1"' : '' ); ?> /><?php
-					echo wc_help_tip( __( 'Enable this option to conditionally overlay an image over the main Composite Product image. When using this feature, product image zooming will be disabled.', 'woocommerce-composite-products-conditional-images' ) );
-				?>
+		if ( $is_cp_gte_80 ) {
+			?>
+			<div class="scenario_action_config_group scenario_action_overlay_image_group" >
+				<div class="toggle_scenario_action_config toggle_overlay_image">
+					<label for="scenario_action_overlay_image_<?php echo $id; ?>">
+						<input id="scenario_action_overlay_image_<?php echo $id; ?>" type="checkbox" class="checkbox scenario_action_overlay_image" <?php echo ( $overlay_image === 'yes' ? ' checked="checked"' : '' ); ?> name="bto_scenario_data[<?php echo $id; ?>][scenario_actions][overlay_image][is_active]" <?php echo ( $overlay_image === 'yes' ? ' value="1"' : '' ); ?> />
+						<?php
+							echo __( 'Overlay Image', 'woocommerce-composite-products-conditional-images' );
+							echo wc_help_tip( __( 'Enable this option to conditionally overlay an image over the main Composite Product image. When using this feature, product image zooming will be disabled.', 'woocommerce-composite-products-conditional-images' ) );
+						?>
+					</label>
+				</div>
+				<div class="action_config action_conditional_images" <?php echo ( $overlay_image === 'no' ? ' style="display:none;"' : '' ); ?> >
+					<a href="#" class="upload_conditional_image_button <?php echo $image_id ? 'has_image': ''; ?>">
+						<span class="prompt"><?php echo __( 'Select image', 'woocommerce-composite-products' ); ?></span>
+						<img src="<?php if ( ! empty( $image ) ) echo esc_attr( $image ); else echo esc_attr( wc_placeholder_img_src() ); ?>" />
+						<input type="hidden" name="bto_scenario_data[<?php echo $id; ?>][scenario_actions][overlay_image][image_id]" class="image" value="<?php echo $image_id; ?>" />
+					</a>
+					<a href="#" class="remove_conditional_image_button <?php echo $image_id ? 'has_image': ''; ?>"><?php echo __( 'Remove image', 'woocommerce-composite-products' ); ?></a>
+				</div>
 			</div>
-			<div class="form-field action_conditional_images" <?php echo ( $overlay_image === 'no' ? ' style="display:none;"' : '' ); ?> >
-				<a href="#" class="upload_conditional_image_button <?php echo $image_id ? 'has_image': ''; ?>">
-					<span class="prompt"><?php echo __( 'Select image', 'woocommerce-composite-products' ); ?></span>
-					<img src="<?php if ( ! empty( $image ) ) echo esc_attr( $image ); else echo esc_attr( wc_placeholder_img_src() ); ?>" />
-					<input type="hidden" name="bto_scenario_data[<?php echo $id; ?>][scenario_actions][overlay_image][image_id]" class="image" value="<?php echo $image_id; ?>" />
-				</a>
-				<?php echo wc_help_tip( __( 'Choose an image to overlay over the main Composite Product image.', 'woocommerce-composite-products-conditional-images' ) ); ?>
-				<a href="#" class="remove_conditional_image_button <?php echo $image_id ? 'has_image': ''; ?>"><?php echo __( 'Remove image', 'woocommerce-composite-products' ); ?></a>
+			<?php
+
+		} else {
+
+			?>
+			<div class="scenario_action_overlay_image_group" >
+				<div class="form-field toggle_overlay_image">
+					<label for="scenario_action_overlay_image_<?php echo $id; ?>">
+						<?php echo __( 'Overlay Image', 'woocommerce-composite-products-conditional-images' ); ?>
+					</label>
+					<input id="scenario_action_overlay_image_<?php echo $id; ?>" type="checkbox" class="checkbox scenario_action_overlay_image" <?php echo ( $overlay_image === 'yes' ? ' checked="checked"' : '' ); ?> name="bto_scenario_data[<?php echo $id; ?>][scenario_actions][overlay_image][is_active]" <?php echo ( $overlay_image === 'yes' ? ' value="1"' : '' ); ?> /><?php
+						echo wc_help_tip( __( 'Enable this option to conditionally overlay an image over the main Composite Product image. When using this feature, product image zooming will be disabled.', 'woocommerce-composite-products-conditional-images' ) );
+					?>
+				</div>
+				<div class="form-field action_conditional_images" <?php echo ( $overlay_image === 'no' ? ' style="display:none;"' : '' ); ?> >
+					<a href="#" class="upload_conditional_image_button <?php echo $image_id ? 'has_image': ''; ?>">
+						<span class="prompt"><?php echo __( 'Select image', 'woocommerce-composite-products' ); ?></span>
+						<img src="<?php if ( ! empty( $image ) ) echo esc_attr( $image ); else echo esc_attr( wc_placeholder_img_src() ); ?>" />
+						<input type="hidden" name="bto_scenario_data[<?php echo $id; ?>][scenario_actions][overlay_image][image_id]" class="image" value="<?php echo $image_id; ?>" />
+					</a>
+					<a href="#" class="remove_conditional_image_button <?php echo $image_id ? 'has_image': ''; ?>"><?php echo __( 'Remove image', 'woocommerce-composite-products' ); ?></a>
+				</div>
 			</div>
-		</div>
-		<?php
+			<?php
+		}
 	}
 
 	/**

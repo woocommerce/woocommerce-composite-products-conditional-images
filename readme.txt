@@ -4,10 +4,10 @@ Contributors: franticpsyx, SomewhereWarm
 Tags: woocommerce, composite, products, conditional, image, layers, overlay
 Requires at least: 4.4
 Tested up to: 5.6
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 Requires PHP: 5.6
 WC requires at least: 3.1
-WC tested up to: 5.0
+WC tested up to: 5.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -50,6 +50,7 @@ Instead of replacing the product images, the same effect can be achieved by cove
 * some **opaque** areas that introduce new elements in the scene by covering the layers below; and
 * possibly, some **semi-trasparent** areas that introduce new elements while partially allowing the layers below to be seen.
 
+**Note**: When compositing images from multiple active Scenarios, the order of layered images will follow the order of Scenarios.
 
 = Swapping vs Compositing =
 
@@ -80,6 +81,9 @@ Composite Products - Conditional Images:
 
 
 == Changelog ==
+
+= 1.2.5 =
+* Fix - Make sure that the order of composited images is always following the order of Scenarios.
 
 = 1.2.4 =
 * Fix - Improved Scenario Action styles when using Composite Products v8.0.
@@ -117,5 +121,5 @@ Composite Products - Conditional Images:
 
 == Upgrade Notice ==
 
-= 1.2.4 =
-Improved Scenario Action styles when using Composite Products v8.0.
+= 1.2.5 =
+Made sure that the order of composited images is always following the order of Scenarios.

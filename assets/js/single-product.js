@@ -24,7 +24,8 @@
 
 					component_selection_changed_handler: function( step ) {
 
-						var active_scenarios = composite.scenarios.get_active_scenarios_by_type( 'overlay_image' )
+						// Get the active 'overlay_image' scenarios, preserving their order.
+						var active_scenarios = _.intersection( composite.scenarios.get_scenarios_by_type( 'overlay_image' ), composite.scenarios.get_active_scenarios_by_type( 'overlay_image' ) );
 
 						this.set( { active_scenarios: active_scenarios } );
 					}
@@ -95,20 +96,26 @@
 					render: function() {
 
 						var active_scenarios = this.model.get( 'active_scenarios' ),
-							image_width      = this.$main_image.width(),
-							overlay_css      = { width: image_width, position: 'absolute', 'z-index': 1 };
+						    image_width      = this.$main_image.width(),
+						    overlay_css      = { width: image_width, position: 'absolute', 'z-index': 1 };
 
 						// Remove overlays.
 						this.$main_image_container.find( '.wc-cp-overlay-image' ).remove();
 
-						for ( var index = active_scenarios.length - 1; index >= 0; index-- ) {
+						for ( var index = active_scenarios.length - 1; index >= 0 ; index-- ) {
 
 							var scenario_id = active_scenarios[ index ],
-								image_html  = composite.scenarios.get_scenario_data().scenario_settings.overlay_image[ scenario_id ],
-								$image_html = $( image_html ).css( overlay_css );
+							    image_html  = composite.scenarios.get_scenario_data().scenario_settings.overlay_image[ scenario_id ];
+
+							if ( ! image_html ) {
+								continue;
+							}
+
+							var $image_html = $( image_html ).css( overlay_css );
 
 							if ( image_html ) {
 								this.$main_image_container.prepend( $image_html );
+								overlay_css[ 'z-index' ]++;
 							}
 						}
 					},
@@ -116,7 +123,7 @@
 					handle_resize: function() {
 
 						var image_width = this.$main_image.width(),
-							overlay_css = { width: image_width };
+						    overlay_css = { width: image_width };
 
 						this.$main_image_container.find( '.wc-cp-overlay-image' ).css( overlay_css );
 					}

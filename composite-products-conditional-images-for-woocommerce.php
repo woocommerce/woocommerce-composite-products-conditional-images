@@ -3,7 +3,7 @@
 * Plugin Name: Composite Products - Conditional Images
 * Plugin URI: https://docs.woocommerce.com/document/composite-products/composite-products-extensions/#cp-ci
 * Description: Free mini-extension for WooCommerce Composite Products that allows you to create dynamic, multi-layer Composite Product images that respond to option changes.
-* Version: 1.2.4
+* Version: 1.2.5
 * Author: SomewhereWarm
 * Author URI: https://somewherewarm.com/
 *
@@ -14,7 +14,7 @@
 * Tested up to: 5.6
 *
 * WC requires at least: 3.1
-* WC tested up to: 5.0
+* WC tested up to: 5.1
 *
 * Copyright: © 2017-2021 SomewhereWarm SMPC.
 * License: GNU General Public License v3.0
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Main plugin class.
  *
  * @class    WC_CP_Conditional_Images
- * @version  1.2.4
+ * @version  1.2.5
  */
 class WC_CP_Conditional_Images {
 
@@ -39,7 +39,7 @@ class WC_CP_Conditional_Images {
 	 *
 	 * @var string
 	 */
-	public static $version = '1.2.4';
+	public static $version = '1.2.5';
 
 	/**
 	 * Min required CP version.

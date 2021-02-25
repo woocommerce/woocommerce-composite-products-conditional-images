@@ -4,7 +4,7 @@ Contributors: franticpsyx, SomewhereWarm
 Tags: woocommerce, composite, products, conditional, image, layers, overlay
 Requires at least: 4.4
 Tested up to: 5.6
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 Requires PHP: 5.6
 WC requires at least: 3.1
 WC tested up to: 5.1
@@ -82,6 +82,9 @@ Composite Products - Conditional Images:
 
 == Changelog ==
 
+= 1.2.6 =
+* Fix - Fixed an issue that prevented the 'Overlay Image' action options from rendering correctly.
+
 = 1.2.5 =
 * Fix - Make sure that the order of composited images is always following the order of Scenarios.
 
@@ -121,5 +124,5 @@ Composite Products - Conditional Images:
 
 == Upgrade Notice ==
 
-= 1.2.5 =
-Made sure that the order of composited images is always following the order of Scenarios.
+= 1.2.6 =
+Fixed an issue that prevented the 'Overlay Image' action options from rendering correctly.

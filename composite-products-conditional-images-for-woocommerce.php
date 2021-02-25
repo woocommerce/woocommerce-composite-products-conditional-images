@@ -3,7 +3,7 @@
 * Plugin Name: Composite Products - Conditional Images
 * Plugin URI: https://docs.woocommerce.com/document/composite-products/composite-products-extensions/#cp-ci
 * Description: Free mini-extension for WooCommerce Composite Products that allows you to create dynamic, multi-layer Composite Product images that respond to option changes.
-* Version: 1.2.5
+* Version: 1.2.6
 * Author: SomewhereWarm
 * Author URI: https://somewherewarm.com/
 *
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Main plugin class.
  *
  * @class    WC_CP_Conditional_Images
- * @version  1.2.5
+ * @version  1.2.6
  */
 class WC_CP_Conditional_Images {
 
@@ -39,7 +39,7 @@ class WC_CP_Conditional_Images {
 	 *
 	 * @var string
 	 */
-	public static $version = '1.2.5';
+	public static $version = '1.2.6';
 
 	/**
 	 * Min required CP version.
@@ -111,7 +111,7 @@ class WC_CP_Conditional_Images {
 		// Add qty data in scenarios.
 		add_filter( 'woocommerce_composite_current_scenario_data', array( __CLASS__, 'scenario_data' ), 10, 4 );
 
-		if ( version_compare( WC_CP()->version, '8.0.0' ) < 0 ) {
+		if ( version_compare( WC_CP()->version, '8.0' ) < 0 ) {
 			// Allow 'overlay_image' scenario actions to be created via the REST API.
 			add_filter( 'woocommerce_rest_api_extended_composite_scenarios_field_args', array( __CLASS__, 'add_rest_api_scenario_action' ) );
 		}
@@ -299,7 +299,7 @@ class WC_CP_Conditional_Images {
 		$overlay_image = isset( $scenario_data[ 'scenario_actions' ][ 'overlay_image' ][ 'is_active' ] ) && 'yes' === $scenario_data[ 'scenario_actions' ][ 'overlay_image' ][ 'is_active' ] ? 'yes' : 'no';
 		$image_id      = ! empty( $scenario_data[ 'scenario_actions' ][ 'overlay_image' ][ 'image_id' ] ) ? $scenario_data[ 'scenario_actions' ][ 'overlay_image' ][ 'image_id' ] : '';
 		$image         = $image_id ? wp_get_attachment_thumb_url( $image_id ) : '';
-		$is_cp_gte_80  = version_compare( WC_CP()->version, '8.0.0' );
+		$is_cp_gte_80  = version_compare( WC_CP()->version, '8.0' ) >= 0;
 
 		if ( $is_cp_gte_80 ) {
 			?>

@@ -8,7 +8,7 @@ Mini-extension for [WooCommerce Composite Products](https://woocommerce.com/prod
 
 The mini-extension introduces a new **Scenario Action** called **Overlay Image**, which requires you to choose an image from your Media library. When the Scenario matching conditions are satified, this image is overlaid on top of the main Composite Product image.
 
-When multiple **Overlay Image** Scenarios exist, each adds its own image to the main product image stack. The layering order of these conditional images depends on the relative position of their Scenarios: If Scenario A is positioned higher than Scenario B under **Product Data > Scenarios**, then the image added by Scenario A will appear higher in the stack than the image of Scenario B.
+When multiple **Overlay Image** Scenarios exist, each adds its own image to the main product image stack. The layering order of these conditional images depends on the relative position of their Scenarios: If Scenario A is positioned higher than Scenario B under **Product Data > Scenarios**, then the image added by Scenario A will appear higher in the stack than the image added by Scenario B.
 
 This approach makes it possible to utilize either **swapping** or **compositing** techniques to conditionally modify the main product image, depending on your needs:
 

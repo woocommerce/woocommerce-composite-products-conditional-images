@@ -26,8 +26,6 @@ The plugin introduces a new "Overlay Image" Scenario Action that lets you:
 * Choose an image from your Media library.
 * Define **conditions** for layering this image over the main Composite Product image.
 
-The layering order of these conditional images depends on the relative position of your "Overlay Image" Scenarios.
-
 This approach makes it possible to utilize either **swapping** or **compositing** techniques to conditionally modify the main product image.
 
 For more information and examples, check out the plugin's repository on [GitHub](https://github.com/somewherewarm/woocommerce-composite-products-conditional-images).
@@ -50,7 +48,8 @@ Instead of replacing the product images, the same effect can be achieved by cove
 * some **opaque** areas that introduce new elements in the scene by covering the layers below; and
 * possibly, some **semi-trasparent** areas that introduce new elements while partially allowing the layers below to be seen.
 
-**Note**: When compositing images from multiple active Scenarios, the order of layered images will follow the order of Scenarios.
+**Note**: When multiple **Overlay Image** Scenarios exist, each adds its own image to the main product image stack. The layering order of these conditional images depends on the relative position of their Scenarios: If Scenario A is positioned higher than Scenario B under **Product Data > Scenarios**, then the image added by Scenario A will appear higher in the stack than the image added by Scenario B.
+
 
 = Swapping vs Compositing =
 

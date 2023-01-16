@@ -30,6 +30,8 @@ This approach makes it possible to utilize either **swapping** or **compositing*
 
 For more information and examples, check out the plugin's repository on [GitHub](https://github.com/somewherewarm/woocommerce-composite-products-conditional-images).
 
+**Important**: The code in this plugin is provided "as is". Support via the WordPress.org forum is provided on a **voluntary** basis only. If you have an active subscription for WooCommerce Composite Products, please be aware that WooCommerce Support may not be able to assist you with this experimental plugin.
+
 
 = Image Swapping =
 

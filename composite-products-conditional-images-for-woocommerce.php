@@ -3,7 +3,7 @@
 * Plugin Name: Composite Products - Conditional Images
 * Plugin URI: https://docs.woocommerce.com/document/composite-products/composite-products-extensions/#cp-ci
 * Description: Free mini-extension for WooCommerce Composite Products that allows you to create dynamic, multi-layer Composite Product images that respond to option changes.
-* Version: 1.2.6
+* Version: 1.3.0
 * Author: SomewhereWarm
 * Author URI: https://somewherewarm.com/
 *
@@ -11,10 +11,10 @@
 * Domain Path: /languages/
 *
 * Requires at least: 4.4
-* Tested up to: 5.6
+* Tested up to: 6.3
 *
 * WC requires at least: 3.1
-* WC tested up to: 5.1
+* WC tested up to: 8.0
 *
 * Copyright: © 2017-2021 SomewhereWarm SMPC.
 * License: GNU General Public License v3.0
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Main plugin class.
  *
  * @class    WC_CP_Conditional_Images
- * @version  1.2.6
+ * @version  1.3.0
  */
 class WC_CP_Conditional_Images {
 
@@ -90,6 +90,9 @@ class WC_CP_Conditional_Images {
 			return false;
 		}
 
+		// Declare HPOS compatibility.
+		add_action( 'before_woocommerce_init', array( __CLASS__, 'declare_hpos_compatibility' ) );
+
 		// Localization.
 		add_action( 'init', array( __CLASS__, 'localize_plugin' ) );
 
@@ -131,6 +134,19 @@ class WC_CP_Conditional_Images {
 	 */
 	public static function localize_plugin() {
 		load_plugin_textdomain( 'woocommerce-composite-products-conditional-images', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	}
+
+	/**
+	 * Declare HPOS( Custom Order tables) compatibility.
+	 *
+	 */
+	public static function declare_hpos_compatibility() {
+
+		if ( ! class_exists( 'Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+			return;
+		}
+
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', plugin_basename( __FILE__ ), true );
 	}
 
 	/**

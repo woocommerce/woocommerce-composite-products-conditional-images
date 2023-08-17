@@ -145,8 +145,7 @@ class WC_CP_Conditional_Images {
 		}
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-
-		wp_register_script( 'wc-add-to-cart-composite-ci', self::plugin_url() . '/assets/js/single-product' . $suffix . '.js', array( 'jquery', 'underscore', 'backbone' ), self::$version );
+		wp_register_script( 'wc-add-to-cart-composite-ci', self::plugin_url() . '/assets/js/single-product' . $suffix . '.js', array( 'jquery', 'underscore', 'backbone' ), self::$version, true );
 		$dependencies[] = 'wc-add-to-cart-composite-ci';
 
 		return $dependencies;

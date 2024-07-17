@@ -4,7 +4,7 @@ Contributors: franticpsyx, SomewhereWarm
 Tags: woocommerce, composite, products, conditional, image, layers, overlay
 Requires at least: 6.2
 Tested up to: 6.6
-Stable tag: 1.4.0
+Stable tag: 2.0.0
 Requires PHP: 7.4
 WC requires at least: 8.2
 WC tested up to: 9.1
@@ -83,11 +83,11 @@ Composite Products - Conditional Images:
 
 == Changelog ==
 
-= 1.4.0 =
+= 2.0.0 =
 * Important - New: PHP 7.4+ is now required.
 * Important - New: WooCommerce 8.2+ is now required.
 * Important - New: WordPress 6.2+ is now required.
-* Important - New: Composite Products 10+ is now required.
+* Important - New: Composite Products 10.0+ is now required.
 
 = 1.3.0 =
 * Feature - Declared compatibility with the new High-Performance order tables.

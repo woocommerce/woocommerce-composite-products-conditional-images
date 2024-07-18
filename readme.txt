@@ -1,7 +1,7 @@
 === Composite Products - Conditional Images ===
 
-Contributors: franticpsyx, SomewhereWarm
-Tags: woocommerce, composite, products, conditional, image, layers, overlay
+Contributors: SomewhereWarm
+Tags: woocommerce, composite, conditional, image, layers, overlay
 Requires at least: 6.2
 Tested up to: 6.6
 Stable tag: 2.0.0

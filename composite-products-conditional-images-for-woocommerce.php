@@ -3,20 +3,20 @@
 * Plugin Name: Composite Products - Conditional Images
 * Plugin URI: https://docs.woocommerce.com/document/composite-products/composite-products-extensions/#cp-ci
 * Description: Free mini-extension for WooCommerce Composite Products that allows you to create dynamic, multi-layer Composite Product images that respond to option changes.
-* Version: 1.3.0
+* Version: 2.0.0
 * Author: SomewhereWarm
 * Author URI: https://somewherewarm.com/
 *
 * Text Domain: woocommerce-composite-products-conditional-images
 * Domain Path: /languages/
 *
-* Requires at least: 4.4
-* Tested up to: 6.3
+* Requires at least: 6.2
+* Tested up to: 6.6
 *
-* WC requires at least: 3.1
-* WC tested up to: 8.0
+* WC requires at least: 8.2
+* WC tested up to: 9.1
 *
-* Copyright: © 2017-2021 SomewhereWarm SMPC.
+* Copyright: © 2017-2024 SomewhereWarm SMPC.
 * License: GNU General Public License v3.0
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Main plugin class.
  *
  * @class    WC_CP_Conditional_Images
- * @version  1.3.0
+ * @version  2.0.0
  */
 class WC_CP_Conditional_Images {
 
@@ -39,14 +39,14 @@ class WC_CP_Conditional_Images {
 	 *
 	 * @var string
 	 */
-	public static $version = '1.2.6';
+	public static $version = '2.0.0';
 
 	/**
 	 * Min required CP version.
 	 *
 	 * @var string
 	 */
-	public static $req_cp_version = '5.1';
+	public static $req_cp_version = '10.0';
 
 	/**
 	 * CP URL.
@@ -114,10 +114,8 @@ class WC_CP_Conditional_Images {
 		// Add qty data in scenarios.
 		add_filter( 'woocommerce_composite_current_scenario_data', array( __CLASS__, 'scenario_data' ), 10, 4 );
 
-		if ( version_compare( WC_CP()->version, '8.0' ) < 0 ) {
-			// Allow 'overlay_image' scenario actions to be created via the REST API.
-			add_filter( 'woocommerce_rest_api_extended_composite_scenarios_field_args', array( __CLASS__, 'add_rest_api_scenario_action' ) );
-		}
+		// Allow 'overlay_image' scenario actions to be created via the REST API.
+		add_filter( 'woocommerce_rest_api_extended_composite_scenarios_field_args', array( __CLASS__, 'add_rest_api_scenario_action' ) );
 	}
 
 	/**

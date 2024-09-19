@@ -1,12 +1,12 @@
 {
 	"name": "woocommerce-composite-products-conditional-images",
 	"title": "Composite Products - Conditional Images for WooCommerce",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"homepage": "http://woocommerce.com/products/composite-products/",
 	"license": "GPL-3.0+",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/woocommerce/woocommerce-composite-products.git"
+		"url": "https://github.com/woocommerce/woocommerce-composite-products-conditional-images.git"
 	},
 	"main": "Gruntfile.js",
 	"devDependencies": {

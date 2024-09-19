@@ -4,7 +4,7 @@ Contributors: automattic, woocommerce, SomewhereWarm
 Tags: woocommerce, composite, conditional, image, layers, overlay
 Requires at least: 6.2
 Tested up to: 6.6
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 Requires PHP: 7.4
 WC requires at least: 8.2
 WC tested up to: 9.1
@@ -28,7 +28,7 @@ The plugin introduces a new "Overlay Image" Scenario Action that lets you:
 
 This approach makes it possible to utilize either **swapping** or **compositing** techniques to conditionally modify the main product image.
 
-For more information and examples, check out the plugin's repository on [GitHub](https://github.com/somewherewarm/woocommerce-composite-products-conditional-images).
+For more information and examples, check out the plugin's repository on [GitHub](https://github.com/woocommerce/woocommerce-composite-products-conditional-images).
 
 **Important**: The code in this plugin is provided "as is". Support via the WordPress.org forum is provided on a **voluntary** basis only. If you have an active subscription for WooCommerce Composite Products, please be aware that WooCommerce Support may not be able to assist you with this experimental plugin.
 
@@ -82,6 +82,9 @@ Composite Products - Conditional Images:
 
 
 == Changelog ==
+
+= 2.0.1 =
+* Tweak - Updated author links.
 
 = 2.0.0 =
 * Important - New: PHP 7.4+ is now required.

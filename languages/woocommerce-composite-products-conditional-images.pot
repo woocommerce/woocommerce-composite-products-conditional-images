@@ -1,53 +1,53 @@
-# Copyright (C) 2021 SomewhereWarm
+# Copyright (C) 2024 WooCommerce
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: Composite Products - Conditional Images 1.2.6\n"
+"Project-Id-Version: Composite Products - Conditional Images 2.0.1\n"
 "Report-Msgid-Bugs-To: https://woocommerce.com/my-account/create-a-ticket/\n"
-"POT-Creation-Date: 2021-02-25 14:10:05+00:00\n"
+"POT-Creation-Date: 2024-09-19 07:00:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2021-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: composite-products-conditional-images-for-woocommerce.php:124
+#: composite-products-conditional-images-for-woocommerce.php:125
 msgid ""
 "<strong>Composite Products &ndash; Conditional Images</strong> requires <a "
 "href=\"%1$s\" target=\"_blank\">WooCommerce Composite Products</a> version "
 "<strong>%2$s</strong> or higher."
 msgstr ""
 
-#: composite-products-conditional-images-for-woocommerce.php:207
+#: composite-products-conditional-images-for-woocommerce.php:220
 msgid "Choose an Image"
 msgstr ""
 
-#: composite-products-conditional-images-for-woocommerce.php:208
+#: composite-products-conditional-images-for-woocommerce.php:221
 msgid "Save Image"
 msgstr ""
 
-#: composite-products-conditional-images-for-woocommerce.php:311
-#: composite-products-conditional-images-for-woocommerce.php:333
+#: composite-products-conditional-images-for-woocommerce.php:324
+#: composite-products-conditional-images-for-woocommerce.php:346
 msgid "Overlay Image"
 msgstr ""
 
-#: composite-products-conditional-images-for-woocommerce.php:312
-#: composite-products-conditional-images-for-woocommerce.php:336
+#: composite-products-conditional-images-for-woocommerce.php:325
+#: composite-products-conditional-images-for-woocommerce.php:349
 msgid ""
 "Enable this option to conditionally overlay an image over the main "
 "Composite Product image. When using this feature, product image zooming "
 "will be disabled."
 msgstr ""
 
-#: composite-products-conditional-images-for-woocommerce.php:318
-#: composite-products-conditional-images-for-woocommerce.php:341
+#: composite-products-conditional-images-for-woocommerce.php:331
+#: composite-products-conditional-images-for-woocommerce.php:354
 msgid "Select image"
 msgstr ""
 
-#: composite-products-conditional-images-for-woocommerce.php:322
-#: composite-products-conditional-images-for-woocommerce.php:345
+#: composite-products-conditional-images-for-woocommerce.php:335
+#: composite-products-conditional-images-for-woocommerce.php:358
 msgid "Remove image"
 msgstr ""
 
@@ -69,9 +69,9 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "SomewhereWarm"
+msgid "WooCommerce"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://somewherewarm.com/"
+msgid "https://woocommerce.com/"
 msgstr ""

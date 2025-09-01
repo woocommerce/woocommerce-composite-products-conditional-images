@@ -4,7 +4,7 @@ Contributors: automattic, woocommerce, SomewhereWarm
 Tags: woocommerce, composite, conditional, image, layers, overlay
 Requires at least: 6.2
 Tested up to: 6.6
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 Requires PHP: 7.4
 WC requires at least: 8.2
 WC tested up to: 9.1
@@ -82,6 +82,9 @@ Composite Products - Conditional Images:
 
 
 == Changelog ==
+
+= 2.0.2 =
+* Fix - Fixed script dependencies when using block themes.
 
 = 2.0.1 =
 * Tweak - Updated author links.

@@ -4,7 +4,7 @@ Contributors: automattic, woocommerce, SomewhereWarm
 Tags: woocommerce, composite, conditional, image, layers, overlay
 Requires at least: 6.2
 Tested up to: 6.6
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 Requires PHP: 7.4
 WC requires at least: 8.2
 WC tested up to: 9.1
@@ -82,6 +82,9 @@ Composite Products - Conditional Images:
 
 
 == Changelog ==
+
+= 2.0.3 =
+* Fix - Removed an obsolete REST API scenario schema modification that corrupted the Composite Products scenario actions schema, causing the Products endpoint to reject writes for all scenario action types other than 'overlay_image'.
 
 = 2.0.2 =
 * Fix - Fixed script dependencies when using block themes.

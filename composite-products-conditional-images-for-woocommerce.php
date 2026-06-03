@@ -3,7 +3,7 @@
 * Plugin Name: Composite Products - Conditional Images
 * Plugin URI: https://docs.woocommerce.com/document/composite-products/composite-products-extensions/#cp-ci
 * Description: Free mini-extension for WooCommerce Composite Products that allows you to create dynamic, multi-layer Composite Product images that respond to option changes.
-* Version: 2.0.2
+* Version: 2.0.3
 * Author: WooCommerce
 * Author URI: https://woocommerce.com/
 *
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Main plugin class.
  *
  * @class    WC_CP_Conditional_Images
- * @version  2.0.2
+ * @version  2.0.3
  */
 class WC_CP_Conditional_Images {
 
@@ -39,7 +39,7 @@ class WC_CP_Conditional_Images {
 	 *
 	 * @var string
 	 */
-	public static $version = '2.0.2';
+	public static $version = '2.0.3';
 
 	/**
 	 * Min required CP version.
@@ -113,9 +113,6 @@ class WC_CP_Conditional_Images {
 
 		// Add qty data in scenarios.
 		add_filter( 'woocommerce_composite_current_scenario_data', array( __CLASS__, 'scenario_data' ), 10, 4 );
-
-		// Allow 'overlay_image' scenario actions to be created via the REST API.
-		add_filter( 'woocommerce_rest_api_extended_composite_scenarios_field_args', array( __CLASS__, 'add_rest_api_scenario_action' ) );
 	}
 
 	/**
@@ -360,17 +357,6 @@ class WC_CP_Conditional_Images {
 			</div>
 			<?php
 		}
-	}
-
-	/**
-	 * Add support for creating 'overlay_image' scenario actions via the REST API.
-	 *
-	 * @since  1.1.1
-	 * @param  array
-	 */
-	public static function add_rest_api_scenario_action( $args ) {
-		$args[ 'schema' ][ 'items' ][ 'properties' ][ 'actions' ][ 'items' ][ 'properties' ][ 'action_id' ][ 'enum' ][] = 'overlay_image';
-		return $args;
 	}
 }
 

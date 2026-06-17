@@ -14,7 +14,7 @@
 * Tested up to: 7.0
 *
 * WC requires at least: 8.2
-* WC tested up to: 10.8
+* WC tested up to: 10.9
 *
 * Copyright: © 2017-2024 WooCommerce.
 * License: GNU General Public License v3.0
